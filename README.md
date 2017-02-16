@@ -1,5 +1,6 @@
 # jottakloud
 
 [![Build Status](https://travis-ci.org/ezand/jottakloud.svg?branch=master)](https://travis-ci.org/ezand/jottakloud)
+[![Dependency Status](https://www.versioneye.com/user/projects/58a607b24f72e00012ab9134/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58a607b24f72e00012ab9134)
 
 A kotlin library for use with Jottacloud 
