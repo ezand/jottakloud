@@ -81,7 +81,7 @@ modifyPom {
         licenses {
             license {
                 name 'MIT License'
-                url 'https://raw.githubusercontent.com/ezand/jottakloud/master/LICENSE'
+                url 'https://opensource.org/licenses/MIT'
                 distribution 'repo'
             }
         }
