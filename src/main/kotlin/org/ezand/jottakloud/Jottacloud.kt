@@ -71,6 +71,14 @@ class Jottacloud(val auth: JottacloudAuthentication, val baseUrl: URL = URL("htt
         return getFiles(deviceName, mountPointName, path, emptyList(), recursive)
     }
 
+    fun downloadFile(deviceName: String, mountPointName: String, path: String): InputStream? {
+        val url = buildUrl("${auth.username}/$deviceName/$mountPointName/$path?mode=bin")
+        logger.debug { "Getting file: '$deviceName' -> '$mountPointName' -> '$path': $url" }
+
+        val response = get(url, auth = auth.basicAuth())
+        return streamOrNull(response)
+    }
+
     private fun getFiles(deviceName: String, mountPointName: String, path: String, files: List<FileDetails>, recursive: Boolean): List<FileDetails> {
         val folder = getFolder(deviceName, mountPointName, path)
         if (folder != null) {
@@ -86,14 +94,6 @@ class Jottacloud(val auth: JottacloudAuthentication, val baseUrl: URL = URL("htt
         } else {
             return files
         }
-    }
-
-    fun downloadFile(deviceName: String, mountPointName: String, path: String): InputStream? {
-        val url = buildUrl("${auth.username}/$deviceName/$mountPointName/$path?mode=bin")
-        logger.debug { "Getting file: '$deviceName' -> '$mountPointName' -> '$path': $url" }
-
-        val response = get(url, auth = auth.basicAuth())
-        return streamOrNull(response)
     }
 
     private fun JottacloudAuthentication.basicAuth(): BasicAuthorization {
