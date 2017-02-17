@@ -124,5 +124,5 @@ task wrapper(type: Wrapper) {
 }
 
 nexusStaging {
-    packageGroup = "org.ezand"
+    packageGroup = "org.ezand.jottakloud"
 }
