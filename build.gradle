@@ -4,7 +4,7 @@ buildscript {
         kotlin_version = '1.0.6'
         kotlin_logging_version = '1.4.2'
         logback_version = '1.1.9'
-        gradle_release_verasion = '2.4.0'
+        gradle_release_version = '2.4.0'
         gradle_nexus_version = '2.3.1'
         gradle_nexus_staging_version = '0.5.3'
         khttp_version = '0.1.0'
@@ -30,7 +30,7 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "net.researchgate:gradle-release:$gradle_release_verasion"
+        classpath "net.researchgate:gradle-release:$gradle_release_version"
         classpath "com.bmuschko:gradle-nexus-plugin:$gradle_nexus_version"
         classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:$gradle_nexus_staging_version"
         classpath "org.standardout:gradle-versioneye-plugin:$gradle_versioneye_version"
@@ -72,7 +72,7 @@ dependencies {
     compile "com.github.debop:koda-time:$koda_time_version"
     compile "commons-codec:commons-codec:$commons_codec_version"
 
-    testCompile "org.jetbrains.kotlin:kotlin-test:1.0.5"
+    testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_test_version"
     testCompile "org.jetbrains.spek:spek-api:$spek_version"
     testRuntime "org.jetbrains.spek:spek-junit-platform-engine:$spek_version"
     testCompile "com.nhaarman:mockito-kotlin:$mockito_kotlin_version"
