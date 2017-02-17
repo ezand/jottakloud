@@ -12,6 +12,7 @@ import khttp.structures.authorization.BasicAuthorization
 import mu.KLogging
 import org.ezand.jottakloud.data.*
 import org.ezand.jottakloud.deserializers.JottacloudDateTimeDeserializer
+import org.ezand.jottakloud.exceptions.JottakloudException
 import org.joda.time.DateTime
 import java.io.InputStream
 import java.net.URL
@@ -109,12 +110,14 @@ class Jottacloud(val auth: JottacloudAuthentication, val baseUrl: URL = URL("htt
     }
 
     inline private fun <reified T : Any> objectOrNull(response: Response): T? {
-        if (response.statusCode == 200) {
-            return xmlMapper.readValue(response.text, T::class.java)
-        }
-        else {
-            logger.debug("Got status code ${response.statusCode}: ${response.text}")
-            return null
+        when (response.statusCode) {
+            200 -> try {
+                return xmlMapper.readValue(response.text, T::class.java)
+            } catch (e: Exception) {
+                throw JottakloudException("An error occurred while mapping the xml response", e)
+            }
+            404 -> return null
+            else -> throw JottakloudException("Unexpected http-status from Jottacloud: ${response.statusCode}. Message: ${response.text}")
         }
     }
 
