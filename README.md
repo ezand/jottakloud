@@ -5,7 +5,7 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/58a607b24f72e00012ab9134/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58a607b24f72e00012ab9134)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.ezand.jottakloud/jottkloud/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.ezand.jottakloud/jottakloud)
 
-__A kotlin library for use with Jottacloud__
+__A kotlin library for use with [Jottacloud](https://www.jottacloud.com)__
 
 ## Features:
 * Get user-, device and mountpoint info
