@@ -12,6 +12,25 @@ __A kotlin library for use with [Jottacloud](https://www.jottacloud.com)__
 * List Jottacloud-content (files and folders)
 * Download files
 
+## Download:
+__Maven:__
+```xm
+<dependency>
+    <groupId>org.ezand.jottakloud</groupId>
+    <artifactId>jottakloud</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+__Gradle:__
+```groovy
+compile 'org.ezand.jottakloud:jottakloud:1.0'
+```
+
+__Ivy:__
+```xml
+<dependency org="org.ezand.jottakloud" name="jottakloud" rev="1.0" />
+```
+
 ## Usage
 ```kotlin
 val jottakloud = Jottakloud(JottacloudAuthentication("user", "pass"))
