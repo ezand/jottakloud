@@ -17,7 +17,7 @@ import java.io.InputStream
 import java.net.URL
 import java.net.URLEncoder
 
-class Jottacloud(val baseUrl: URL, val auth: JottacloudAuthentication) {
+class Jottacloud(val auth: JottacloudAuthentication, val baseUrl: URL = URL("https://www.jottacloud.com/jfs")) {
     companion object : KLogging()
 
     private val xmlMapper = XmlMapper()

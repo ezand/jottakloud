@@ -1,24 +1,26 @@
 package org.ezand.jottakloud
 
-import com.nhaarman.mockito_kotlin.doReturn
-import com.nhaarman.mockito_kotlin.mock
-import org.ezand.jottakloud.data.Device
+import org.ezand.jottakloud.TestData.device
+import org.ezand.jottakloud.TestData.deviceXml
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.describe
 import org.jetbrains.spek.api.dsl.it
-import org.mockito.ArgumentMatchers.anyString
-import java.util.*
+import java.net.URL
+import kotlin.test.assertEquals
 
-// TODO real tests
 class JottakloudSpec : Spek({
-    val jottacloud = mock<Jottacloud> {
-        on { getDevice(anyString()) } doReturn Device("FOOO", "BAR", "SNA", UUID.randomUUID(), 1L, null, null, emptyList())
-    }
+    val server = TestWebServer()
+    server.get("/someUser/Jottacloud", { response.send(deviceXml) })
 
-    describe("FOO") {
-        it("BAR") {
-            val device = jottacloud.getDevice("foo")
-            println(device)
+    val jottakloud = Jottacloud(JottacloudAuthentication("someUser", "password"), URL("http://127.0.0.1:${server.configuration.port}"))
+
+    describe("Fetching Jottacloud content") {
+        beforeGroup { server.start(wait = false) }
+        afterGroup { server.stop() }
+
+        it("should return correct device") {
+            val actual = jottakloud.getDevice("Jottacloud")
+            assertEquals(device, actual)
         }
     }
 })

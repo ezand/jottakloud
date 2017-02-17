@@ -1,0 +1,32 @@
+<device time="2017-02-17-T08:35:41Z" host="dn-098">
+    <name xml:space="preserve">Jotta</name>
+    <display_name xml:space="preserve">Jotta</display_name>
+    <type>JOTTA</type>
+    <sid>a37f4dd6-3a47-4a9c-a70e-6c1410447427</sid>
+    <size>5365591317</size>
+    <modified>2017-01-22-T20:30:24Z</modified>
+    <user>someUser</user>
+    <mountPoints>
+        <mountPoint>
+            <name xml:space="preserve">Archive</name>
+            <size>0</size>
+            <modified/>
+        </mountPoint>
+        <mountPoint>
+            <name xml:space="preserve">Photos</name>
+            <size>5365394415</size>
+            <modified>2017-01-22-T20:30:24Z</modified>
+        </mountPoint>
+        <mountPoint>
+            <name xml:space="preserve">Shared</name>
+            <size>0</size>
+            <modified/>
+        </mountPoint>
+        <mountPoint>
+            <name xml:space="preserve">Sync</name>
+            <size>196902</size>
+            <modified>2017-01-20-T13:47:22Z</modified>
+        </mountPoint>
+    </mountPoints>
+    <metadata first="" max="" total="4" num_mountpoints="4"/>
+</device>

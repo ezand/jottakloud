@@ -1,0 +1,32 @@
+<user time="2017-02-17-T08:34:37Z" host="dn-094">
+    <username>ezand</username>
+    <account-type>free</account-type>
+    <locked>false</locked>
+    <capacity>5368709120</capacity>
+    <max-devices>-1</max-devices>
+    <max-mobile-devices>-1</max-mobile-devices>
+    <usage>5365591317</usage>
+    <read-locked>false</read-locked>
+    <write-locked>false</write-locked>
+    <quota-write-locked>false</quota-write-locked>
+    <enable-sync>true</enable-sync>
+    <enable-foldershare>true</enable-foldershare>
+    <devices>
+        <device>
+            <name xml:space="preserve">Eirik’s MacBook Pro (gammel)</name>
+            <display_name xml:space="preserve">Eirik’s MacBook Pro (gammel)</display_name>
+            <type>IMAC</type>
+            <sid>8c01b977-c359-4f4e-9ed0-5adb1c5d0c2f</sid>
+            <size>0</size>
+            <modified/>
+        </device>
+        <device>
+            <name xml:space="preserve">Jotta</name>
+            <display_name xml:space="preserve">Jotta</display_name>
+            <type>JOTTA</type>
+            <sid>e2144100-7ac1-474e-8d6b-351911b34692</sid>
+            <size>5365591317</size>
+            <modified>2017-01-22-T20:30:24Z</modified>
+        </device>
+    </devices>
+</user>
